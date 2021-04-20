@@ -1,6 +1,6 @@
 # Reddit Clone
 
-This is the backend for the reddit clone. The backed is made using spring boot. Configure the application using application.properties .
+This is the backend for the reddit clone. The backed is made using spring boot. Configure the application using application.properties . Here master is replaced with main as per new convention.
 
 ## Git Project Setup
 
@@ -28,7 +28,7 @@ This is the backend for the reddit clone. The backed is made using spring boot. 
     git remote add upstream https://github.com/Persistent-Group6/Reddit_Clone_Backend.git
     </li>
     <li>
-    git checkout feature_branch
+    git checkout feature_branch (always work on a diff branch from main)
     </li>
     <li>
     git fetch --all
