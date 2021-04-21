@@ -14,7 +14,7 @@
 	<name>reddit_clone</name>
 	<description>Backend of Reddit Clone</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -111,8 +111,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
-					<source>11</source> <!-- depending on your project -->
-					<target>11</target> <!-- depending on your project -->
+					<source>8</source> <!-- depending on your project -->
+					<target>8</target> <!-- depending on your project -->
 					<annotationProcessorPaths>
 						<path>
 							<groupId>org.mapstruct</groupId>
