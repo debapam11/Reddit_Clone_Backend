@@ -5,12 +5,15 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Service;
 
+import com.grp6.reddit_clone.exceptions.SpringRedditException;
 import com.grp6.reddit_clone.model.NotificationEmail;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class MailService {
 	
 	private final JavaMailSender mailSender;
@@ -22,7 +25,7 @@ public class MailService {
             messageHelper.setFrom("springreddit@email.com");
             messageHelper.setTo(notificationEmail.getRecipient());
             messageHelper.setSubject(notificationEmail.getSubject());
-            messageHelper.setText(notificationEmail.getBody());
+            messageHelper.setText(mailContentBuilder.build(notificationEmail.getBody()));
         };
         try {
             mailSender.send(messagePreparator);
@@ -32,6 +35,5 @@ public class MailService {
             throw new SpringRedditException("Exception occurred when sending mail to " + notificationEmail.getRecipient(), e);
         }
     }
-	}
-
 }
+
