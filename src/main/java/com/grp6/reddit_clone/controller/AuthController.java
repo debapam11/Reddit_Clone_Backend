@@ -11,6 +11,7 @@ import com.grp6.reddit_clone.dto.RegisterRequest;
 import com.grp6.reddit_clone.service.AuthService;
 
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/api/auth")
