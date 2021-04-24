@@ -1,5 +1,6 @@
 package com.grp6.reddit_clone.config;
 
+
 import com.grp6.reddit_clone.security.JwtAuthenticationFilter;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         httpSecurity.csrf().disable().authorizeRequests().antMatchers("/api/auth/**").permitAll().anyRequest().authenticated();
 
         httpSecurity.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+
     }
 
     @Autowired
@@ -52,9 +54,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     @Bean
 	PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
-	}
-
-
-
 
 }
